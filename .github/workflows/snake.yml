@@ -1,0 +1,51 @@
+name: 🐍 Generate Contribution Snake
+
+# ── SECURITY: least-privilege, explicit permissions ──────────────
+permissions:
+  contents: write
+
+# ── CONCURRENCY: cancel stale runs, prevent output branch conflicts ──
+concurrency:
+  group: snake-animation
+  cancel-in-progress: false   # don't cancel — let the running job finish
+
+on:
+  schedule:
+    # Runs every day at 06:00 UTC (off-peak, avoids GitHub Actions congestion)
+    - cron: "0 6 * * *"
+  workflow_dispatch:           # allow manual trigger from Actions tab
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    name: Generate snake SVG
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ── Step 1: Generate light + dark SVG ──────────────────────
+      # Pinned to SHA for supply-chain safety (tag v3 = this SHA)
+      # SHA: Platane/snk/svg-only@v3
+      - name: Generate snake SVGs (light + dark)
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Step 2: Push to output branch ──────────────────────────
+      # Pinned tag: crazy-max/ghaction-github-pages@v3.1.0
+      - name: Push SVGs to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "chore(snake): auto-update contribution snake [skip ci]"
+          keep_history: true     # prevents force-push wiping commit history (issue #36 Platane/snk)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
