@@ -1,0 +1,63 @@
+name: 🔄 Weekly README Refresh
+
+# ── SECURITY: least-privilege ─────────────────────────────────────
+permissions:
+  contents: write
+
+# ── CONCURRENCY: one refresh at a time ───────────────────────────
+concurrency:
+  group: readme-refresh
+  cancel-in-progress: true
+
+on:
+  schedule:
+    # Every Monday at 02:00 UTC
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    name: Refresh README metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      # ── Step 1: Checkout ───────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Step 2: Update last-refreshed date ────────────────────
+      # Uses anchored sed pattern — only matches the specific HTML comment line
+      # to avoid accidentally corrupting other README content
+      - name: Stamp refresh date
+        run: |
+          DATE=$(date -u +'%Y-%m-%d')
+          # Only update if the placeholder line exists (idempotent)
+          if grep -q "<!-- LAST_REFRESHED:" README.md; then
+            sed -i "s|<!-- LAST_REFRESHED:.*-->|<!-- LAST_REFRESHED: ${DATE} -->|" README.md
+          else
+            echo "" >> README.md
+            echo "<!-- LAST_REFRESHED: ${DATE} -->" >> README.md
+          fi
+
+      # ── Step 3: Commit only if something actually changed ─────
+      # The `if: steps.commit.outputs.changes_detected == 'true'` guard
+      # prevents empty commits from spamming the commit history
+      - name: Commit if changed
+        id: commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: weekly README refresh [skip ci]"
+          file_pattern: README.md
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+
+      - name: Report outcome
+        run: |
+          if [ "${{ steps.commit.outputs.changes_detected }}" == "true" ]; then
+            echo "✅ README refreshed and committed."
+          else
+            echo "ℹ️ No changes — skipping commit."
+          fi
