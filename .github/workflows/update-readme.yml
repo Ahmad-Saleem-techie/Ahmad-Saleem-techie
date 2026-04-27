@@ -24,7 +24,7 @@ jobs:
     steps:
       # ── Step 1: Checkout ───────────────────────────────────────
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,7 +47,7 @@ jobs:
       # prevents empty commits from spamming the commit history
       - name: Commit if changed
         id: commit
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: weekly README refresh [skip ci]"
           file_pattern: README.md
