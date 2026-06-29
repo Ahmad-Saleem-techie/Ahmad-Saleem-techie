@@ -303,4 +303,4 @@ I write about Python, AI automation, and LLM engineering. Follow my work:
 </div>
 
 
-<!-- LAST_REFRESHED: 2026-06-22 -->
+<!-- LAST_REFRESHED: 2026-06-29 -->
