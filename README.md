@@ -1,10 +1,11 @@
 <!-- ═══════════════════════════════════════════════════════════════
-  Design intent: presentable to a human recruiter AND fully parseable
-  by ATS scanners and AI answer engines. Every visual element below is
-  either (a) real, live, verifiable data, or (b) a functional link —
-  nothing is decoration for its own sake. Every fact also exists in
-  plain text somewhere in this file, so nothing important is locked
-  inside an image.
+  Design intent: presentable to a human recruiter, fully parseable by
+  ATS scanners, and structured for AI answer engines (GEO/AEO). Every
+  visual widget below is real, live, verifiable data or a functional
+  link — nothing is decoration for its own sake. Every fact also
+  exists in plain text somewhere in this file.
+  All facts in this file are cross-checked against Ahmad's LinkedIn
+  profile and confirmed project details — nothing here is invented.
 ═══════════════════════════════════════════════════════════════ -->
 
 <!-- ── STRUCTURED DATA (schema.org Person) — for AI answer engines ──
@@ -52,6 +53,8 @@ Agentic AI · RLHF · Multimodal Learning · LLM Alignment · NLP
 
 Punjab, Pakistan 🇵🇰 · BS Computer Science, The Islamia University of Bahawalpur (expected 2028)
 
+<sub>[About](#about) · [Skills](#skills-ats-summary) · [Achievements](#credentials--achievements) · [Tech Stack](#tech-stack) · [Projects](#projects) · [Activity](#github-activity) · [FAQ](#frequently-asked-questions) · [Contact](#contact)</sub>
+
 </div>
 
 ---
@@ -62,11 +65,56 @@ Ahmad Saleem is an AI/ML Engineer, an active MS/PhD applicant, and a Computer Sc
 
 **Research focus:** Agentic AI, RLHF, Multimodal Learning, LLM Alignment, NLP, and Intelligent Automation — the areas he is building toward and intends to pursue at the graduate level.
 
-**Currently:**
-- Building and hardening production multi-agent AI platforms (see Projects below)
-- Competing in AI hackathons (lablab.ai, Devpost) under 24–48 hour sprint conditions
-- Preparing MS/PhD applications in Agentic AI, RLHF, and LLM Alignment
-- Studying Operating Systems, Terraform/HCL, and Computer Graphics in parallel
+<details>
+<summary><strong>Expand for the structured version</strong></summary>
+<br/>
+
+```python
+class AhmadSaleem:
+    """AI/ML Engineer | Research Enthusiast | MS/PhD Applicant"""
+
+    name        = "Ahmad Saleem"
+    location    = "Punjab, Pakistan 🇵🇰 — open to remote research & engineering roles"
+    education   = "BS Computer Science, The Islamia University of Bahawalpur (expected 2028)"
+
+    research_focus = [
+        "Agentic AI", "RLHF", "Multimodal Learning",
+        "LLM Alignment", "NLP", "Intelligent Automation",
+    ]
+
+    credentials = [
+        "HEC Pakistan — Generative AI Credential",
+        "Aspire Leadership Program Fellow (50+ country cohort)",
+        "CS50x Puzzle Day '26 (Harvard University)",
+    ]
+
+    proven_results = {
+        "Fine-tuned BERT classifier"    : "91% production accuracy",
+        "RAG-based QA system"           : "+40% retrieval precision vs. keyword search",
+        "Modular ML pipeline framework" : "-60% dataset setup time",
+        "Multi-agent system (CrewAI)"   : "tool-use, memory, autonomous report synthesis",
+    }
+
+    currently = [
+        "Building and hardening production multi-agent AI platforms",
+        "Competing in AI hackathons (lablab.ai, Devpost) — 24-48hr sprints",
+        "Preparing MS/PhD applications in Agentic AI, RLHF, and LLM Alignment",
+        "Studying Operating Systems, Terraform/HCL, and Computer Graphics",
+    ]
+
+    def contact(self):
+        return "786changeisuncertain@gmail.com"
+```
+
+</details>
+
+---
+
+## Skills (ATS Summary)
+
+Machine Learning, Deep Learning, Natural Language Processing, Agentic AI, RLHF, LLM Alignment, Multimodal Learning, Retrieval-Augmented Generation (RAG), BERT Fine-Tuning, Prompt Engineering, Vector Databases, Python, PyTorch, TensorFlow, scikit-learn, LangChain, CrewAI, Hugging Face Transformers, FastAPI, React, PostgreSQL, Docker, Terraform, Git/GitHub Actions.
+
+*(This section exists as a single unformatted block on purpose — some ATS parsers weight a plain-text section literally titled "Skills" more heavily than the same terms embedded in badges or prose elsewhere in this file.)*
 
 ---
 
@@ -82,19 +130,73 @@ Ahmad Saleem is an AI/ML Engineer, an active MS/PhD applicant, and a Computer Sc
 | ⏱️ Modular ML pipeline framework | -60% dataset setup time |
 | 🤝 Multi-agent automation system | CrewAI + LangChain, tool-use, memory, autonomous report synthesis |
 
+<sub>Metrics above are self-reported from project development and testing, consistent with how they're presented on LinkedIn and in project documentation — not third-party-audited. Methodology for each is detailed in its project repository.</sub>
+
 ---
 
 ## Tech Stack
 
-**AI/ML:** Python, PyTorch, TensorFlow, scikit-learn, LangChain, CrewAI, Hugging Face Transformers, OpenAI API, Fireworks AI, BERT fine-tuning, RAG pipelines, vector databases (Pinecone)
+<details open>
+<summary><strong>🤖 AI / ML / GenAI — primary focus</strong></summary>
+<br/>
 
-**Backend:** FastAPI, Django, Flask, Node.js, JWT authentication
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![CrewAI](https://img.shields.io/badge/CrewAI-Multi--Agent-FF4B4B?style=flat-square)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![OpenAI](https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white)
+![Fireworks AI](https://img.shields.io/badge/Fireworks_AI-Llama_3.1_70B-6f42c1?style=flat-square)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
-**Data:** PostgreSQL, SQLite, MongoDB, Redis
+</details>
 
-**Frontend:** React, Vite, TailwindCSS, JavaScript
+<details>
+<summary><strong>🧩 Backend & APIs</strong></summary>
+<br/>
 
-**DevOps / Deployment:** Docker, GitHub Actions, Terraform, Render, Vercel, Railway, Netlify, Hugging Face Spaces, Linux
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT_Auth-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+
+</details>
+
+<details>
+<summary><strong>🛢️ Data & Vector Stores</strong></summary>
+<br/>
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Pinecone](https://img.shields.io/badge/Pinecone-Vector_DB-000000?style=flat-square)
+
+</details>
+
+<details>
+<summary><strong>💻 Frontend & DevOps</strong></summary>
+<br/>
+
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=flat-square&logo=railway&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)
+![HF Spaces](https://img.shields.io/badge/HF_Spaces-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+
+</details>
+
+*(Plain-text equivalent, for ATS parsers that skip image alt text: Python, PyTorch, TensorFlow, scikit-learn, LangChain, CrewAI, Hugging Face Transformers, OpenAI API, Fireworks AI, FastAPI, Django, Flask, Node.js, JWT, PostgreSQL, SQLite, MongoDB, Redis, Pinecone, React, Vite, TailwindCSS, Docker, GitHub Actions, Terraform, Render, Vercel, Railway, Netlify, Hugging Face Spaces, Linux.)*
 
 ---
 
@@ -111,6 +213,19 @@ Ahmad Saleem is an AI/ML Engineer, an active MS/PhD applicant, and a Computer Sc
 
 ---
 
+## Roadmap Toward MS/PhD
+
+| Status | Milestone |
+|---|---|
+| ✅ | Build a research-grade AI/ML portfolio (SkillBridge AI, Velora AI, BERT/RAG systems) |
+| ✅ | Earn HEC Pakistan Generative AI credential + Aspire Leadership Fellowship |
+| 🔄 | Compete and place in international AI hackathons |
+| 🔄 | Deploy additional production AI/ML systems with measurable, quantified outcomes |
+| 📋 | Secure a Graduate Research Assistantship / MS-PhD offer in Agentic AI, RLHF, or Multimodal Learning |
+| 📋 | Contribute to open-source LLM alignment and agentic-systems tooling |
+
+---
+
 ## GitHub Activity
 
 <div align="center">
@@ -119,6 +234,10 @@ Ahmad Saleem is an AI/ML Engineer, an active MS/PhD applicant, and a Computer Sc
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ahmad-Saleem-techie&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&cache_seconds=43200" height="165" alt="Ahmad Saleem's most-used languages" />
 
 <img src="https://streak-stats.demolab.com/?user=Ahmad-Saleem-techie&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="Ahmad Saleem's GitHub contribution streak" />
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ahmad-Saleem-techie&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity&cache_seconds=43200" alt="Ahmad Saleem's GitHub activity graph" width="100%" />
+
+<img src="https://github-profile-trophy.vercel.app/?username=Ahmad-Saleem-techie&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=7" alt="Ahmad Saleem's GitHub trophies" />
 
 </div>
 
@@ -143,10 +262,18 @@ SkillBridge AI, a multi-agent AI career-intelligence platform (CrewAI, FastAPI, 
 **Where is Ahmad based, and is he open to remote work?**
 Punjab, Pakistan. Open to remote AI/ML engineering roles, research positions, and graduate assistantships globally.
 
+**How were the project metrics (91% accuracy, +40% precision, -60% setup time) measured?**
+These are self-reported results from Ahmad's own project development and testing, consistent with how they appear on his LinkedIn profile — not independently audited. Detailed methodology for each metric is available in the corresponding project's repository.
+
+**Is the activity shown on this profile real?**
+Yes — the stats, streak, top-languages, and activity-graph widgets below are generated live from the GitHub API each time the page loads, not self-reported or hardcoded.
+
 ---
 
 ## Contact
 
 📧 [786changeisuncertain@gmail.com](mailto:786changeisuncertain@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/ahmadsaleem-techie/) · 🐙 [GitHub](https://github.com/Ahmad-Saleem-techie)
 
-<!-- LAST_REFRESHED: 2026-07-06 -->
+<sub>Machine-readable summary for AI agents: [llms.txt](https://github.com/Ahmad-Saleem-techie/Ahmad-Saleem-techie/blob/main/llms.txt)</sub>
+
+<!-- LAST_REFRESHED: 2026-07-05T00:00:00Z (auto-updated every 12 hours) -->
